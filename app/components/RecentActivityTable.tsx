@@ -1,12 +1,26 @@
 // components/RecentActivityTable.tsx
-export default function RecentActivityTable() {
+
+
+interface Activity {
+    id: number;
+    user: string;
+    action: string;
+    time: string;
+}
+
+interface RecentActivityTableProps {
+    activities: Activity[];
+}
+
+
+export default function RecentActivityTable({activities}: RecentActivityTableProps) {
     // Sample data - in a real app, this would come from an API
-    const activities = [
-        { id: 1, user: 'John Doe', action: 'Created a new post', time: '2 hours ago' },
-        { id: 2, user: 'Jane Smith', action: 'Updated profile', time: '3 hours ago' },
-        { id: 3, user: 'Bob Johnson', action: 'Deleted a comment', time: '5 hours ago' },
-        { id: 4, user: 'Alice Williams', action: 'Purchased Premium Plan', time: '1 day ago' },
-    ]
+    // const activities = [
+    //     { id: 1, user: 'John Doe', action: 'Created a new post', time: '2 hours ago' },
+    //     { id: 2, user: 'Jane Smith', action: 'Updated profile', time: '3 hours ago' },
+    //     { id: 3, user: 'Bob Johnson', action: 'Deleted a comment', time: '5 hours ago' },
+    //     { id: 4, user: 'Alice Williams', action: 'Purchased Premium Plan', time: '1 day ago' },
+    // ]
 
     return (
         <div className="overflow-x-auto">
